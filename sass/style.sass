@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap')
+
+* 
+	outline: none !important
+
+img 
+	max-width: 100%
+	height: auto
+
+body 
+	font-family: 'Open Sans', sans-serif
+
+a 
+	text-decoration: none !important
+	transition: .3s
+	color: #000
+	&:hover 
+		color: initial
+		opacity: .6
+
+.gray
+	color: #686868
+
+.gray-2
+	color: #bebebe
+
+@media (min-width: 1260px)
+	.container 
+		max-width: 1200px
+
+.row-1
+	@media (min-width: 576px)
+		margin-left: -20px
+		margin-right: -20px
+		[class*='col']
+			padding-left: 20px
+			padding-right: 20px
+
+.btn 
+	&:focus 
+		box-shadow: none
+
+.btn-newsletter
+	text-transform: uppercase
+	color: #FFF
+	background: #00acc8
+	padding: 6px 22px
+	border-radius: 6px
+	transition: .3s
+	&:hover 
+		color: #FFF
+		opacity: .8
+
+.btn-newsletter-2
+	background: #f75b19
+
+.btn-sign
+	text-transform: uppercase
+	color: #FFF
+	background: #f75b19
+	padding: 12px 22px
+	border-radius: 5px
+	transition: .3s
+	font-size: 10px
+	&:hover 
+		color: #FFF
+		opacity: .9
+
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5
+	a 
+		color: #000
+		&:hover 
+			color: #000
+			opacity: .6
+
+.h1, h1
+	font-size: 30px
+	font-weight: 900
+	@media (max-width: 991.98px) 
+		font-size: 24px
+
+.h2, h2 
+	font-size: 22px
+	font-weight: 900
+
+.h3, h3 
+	font-size: 20px
+	font-weight: 900
+
+.h4, h4 
+	font-size: 16px
+	font-weight: 900
+
+.h5, h5 
+	font-size: 14px
+	font-weight: bold
+	text-transform: uppercase
+	position: relative
+	&:before 
+		content: ""
+		position: absolute
+		top: -10px
+		left: 0
+		width: 20px
+		height: 4px
+		background: #000
+
+.topic-name
+	color: #88c86f
+	text-transform: uppercase
+	font-size: 10px
+	font-weight: bold
+
+.navbar 
+	transition: .3s
+	background: #FFF
+	.container 
+		@media (min-width: 1200px) 
+			padding-bottom: 10px !important
+	.navbar-toggler 
+		border: 0 !important
+		padding: 0 !important
+	.navbar-nav
+		.nav-item 
+			margin: 0 15px
+			@media (max-width: 991.98px)
+				margin: 0
+			.nav-link
+				color: #6e6e6e
+				text-transform: uppercase
+	.navbar-brand 
+		margin-right: 20px
+		@media (max-width: 991.98px)	
+			width: auto
+			margin-right: 0
+		img
+			width: 175px
+			transition: width .3s
+			@media (max-width: 1199.98px)
+				max-width: 110px
+	&.sticky	
+		background: #f8f9fa
+		.container 
+			padding-bottom: 0 !important
+	@media (min-width: 768px)
+		padding: 10px
+		&.sticky	
+			padding-top: 4px
+			padding-bottom: 4px
+			.navbar-brand
+				img
+					transition: .3s
+					width: 100px
+	@media (max-width: 1199.98px)
+		background: #f8f9fa
+
+.section-1
+	margin-top: 130px
+	margin-bottom: 35px
+	@media (max-width: 991.98px)
+		margin-top: 130px
+	@media (max-width: 575.98px)
+		margin-top: 100px
+
+.fz-10	
+	font-size: 10px
+.fz-12	
+	font-size: 12px
+.fz-13	
+	font-size: 13px
+.fz-14	
+	font-size: 14px
+.fz-18	
+	font-size: 18px
+.fz-20	
+	font-size: 20px
+.fz-30	
+	font-size: 30px
+.fz-48	
+	font-size: 48px
+
+.lh-11
+	line-height: 1.1
+
+.border-gray
+	@media (min-width: 1200px)
+		border-bottom: 4px solid #edeff1
+	.sticky &
+		border: 0
+
+.bg-img
+	background-size: cover
+	background-position: center center
+	height: auto
+
+@media (min-width: 1200px)
+	.w-300 
+		width: 300px
+
+.form-search
+	position: relative
+	width: 200px
+	height: 38px
+	.search
+		transition: .3s
+		position: absolute
+		border: none
+		border-radius: 6px
+		padding: 0
+		cursor: pointer
+		text-align: center
+		color: #6e6e6e
+		background: #FFF
+		top: 1px
+		right: 1px
+		bottom: 1px
+		line-height: 36px
+		width: 36px	
+	.input-search
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		border-radius: 6px
+		transition: .3s
+		height: 38px
+		padding: 0 
+		width: 38px
+		box-shadow: none !important
+		border: 1px solid #edeff1
+		@media (max-width: 1199.98px)
+			width: 100%
+			padding: 6px 34px 6px 12px
+	&.open .input-search
+		width: 100%
+		padding: 6px 34px 6px 12px
+
+.navbar-toggler
+	display: inline-block
+	cursor: pointer
+	transition: none
+	padding: 0
+	border: 0
+	&:hover 
+		opacity: .6
+	&:before
+		width: 25px
+	span
+		width: 25px
+	&:after
+		width: 25px
+	&:before, &:after
+		content: ''
+	span, &:after
+		margin-top: 8px
+	span, &:before, &:after
+		display: block
+		transition: .3s
+		transform-origin: right center
+		border-top: 1px solid #000
+		margin-left: auto
+	&.active
+		&:before
+			transform: rotate(-45deg)
+			width: 25px
+		span
+			width: 0
+			opacity: 0
+		&:after
+			transform: rotate(45deg)
+			width: 25px
+
+.form-section
+	background: #fbfbfb
+	border-radius: 12px
+	padding: 20px 25px 28px
+	border: 3px solid #00acc8
+	transition: .3s
+	&:hover 
+		border-color: #f75b19
+	.form-control
+		height: 40px
+		padding: 6px 18px 
+		border-radius: 5px
+		&:focus 
+			box-shadow: none
+
+
