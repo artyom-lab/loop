@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap')
 
+$transition: .3s
+
+$color-black: #000
+$color-white: #FFF
+$color-gray: #6e6e6e
+$color-gray2: #bebebe
+$color-border: #f4f5f7
+$color-border2: #edeff1
+$color-blue: #00acc8
+$color-orange: #f75b19
+$color-yellow: #f6a538
+$color-form: #fbfbfb
 * 
 	outline: none !important
 
@@ -12,8 +24,8 @@ body
 
 a 
 	text-decoration: none !important
-	transition: .3s
-	color: #000
+	transition: $transition
+	color: $color-black
 	&:hover 
 		color: initial
 		opacity: .6
@@ -22,7 +34,7 @@ a
 	color: #686868
 
 .gray-2
-	color: #bebebe
+	color: $color-gray2
 
 @media (min-width: 1260px)
 	.container 
@@ -32,9 +44,20 @@ a
 	@media (min-width: 576px)
 		margin-left: -20px
 		margin-right: -20px
-		[class*='col']
+	> [class*='col']
 			padding-left: 20px
 			padding-right: 20px
+
+.row-2
+	margin-left: -10px
+	margin-right: -10px
+	> [class*='col']
+			padding-left: 10px
+			padding-right: 10px
+
+.br-1
+	@media (min-width: 1200px)
+		border-right: 1px solid $color-border
 
 .btn 
 	&:focus 
@@ -42,35 +65,39 @@ a
 
 .btn-newsletter
 	text-transform: uppercase
-	color: #FFF
-	background: #00acc8
-	padding: 6px 22px
-	border-radius: 6px
-	transition: .3s
+	color: $color-white
+	background: $color-blue
+	padding: 6px 20px
+	border-radius: 0
+	transition: $transition
+	letter-spacing: 1px
 	&:hover 
-		color: #FFF
+		color: $color-white
 		opacity: .8
+	@media (max-width: 575.98px)
+		display: block
 
 .btn-newsletter-2
-	background: #f75b19
+	background: $color-orange
+	padding: 6px 28px
 
 .btn-sign
 	text-transform: uppercase
-	color: #FFF
-	background: #f75b19
+	color: $color-white
+	background: $color-orange
 	padding: 12px 22px
 	border-radius: 5px
-	transition: .3s
+	transition: $transition
 	font-size: 10px
 	&:hover 
-		color: #FFF
+		color: $color-white
 		opacity: .9
 
 .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5
 	a 
-		color: #000
+		color: $color-black
 		&:hover 
-			color: #000
+			color: $color-black
 			opacity: .6
 
 .h1, h1
@@ -84,11 +111,11 @@ a
 	font-weight: 900
 
 .h3, h3 
-	font-size: 20px
+	font-size: 19px
 	font-weight: 900
 
 .h4, h4 
-	font-size: 16px
+	font-size: 14px
 	font-weight: 900
 
 .h5, h5 
@@ -103,17 +130,17 @@ a
 		left: 0
 		width: 20px
 		height: 4px
-		background: #000
+		background: $color-yellow
 
 .topic-name
-	color: #88c86f
+	color: #20a2bd
 	text-transform: uppercase
 	font-size: 10px
 	font-weight: bold
 
 .navbar 
-	transition: .3s
-	background: #FFF
+	transition: $transition
+	background: $color-white
 	.container 
 		@media (min-width: 1200px) 
 			padding-bottom: 10px !important
@@ -126,30 +153,33 @@ a
 			@media (max-width: 991.98px)
 				margin: 0
 			.nav-link
-				color: #6e6e6e
+				color: $color-gray
 				text-transform: uppercase
+				font-weight: bold
 	.navbar-brand 
 		margin-right: 20px
 		@media (max-width: 991.98px)	
 			width: auto
 			margin-right: 0
 		img
-			width: 175px
-			transition: width .3s
+			width: 110px
+			transition: width $transition
 			@media (max-width: 1199.98px)
 				max-width: 110px
+			@media (max-width: 575.98px)
+				max-width: 80px
 	&.sticky	
 		background: #f8f9fa
 		.container 
 			padding-bottom: 0 !important
-	@media (min-width: 768px)
+	@media (min-width: 1199px)
 		padding: 10px
 		&.sticky	
 			padding-top: 4px
 			padding-bottom: 4px
 			.navbar-brand
 				img
-					transition: .3s
+					transition: $transition
 					width: 100px
 	@media (max-width: 1199.98px)
 		background: #f8f9fa
@@ -157,11 +187,14 @@ a
 .section-1
 	margin-top: 130px
 	margin-bottom: 35px
-	@media (max-width: 991.98px)
-		margin-top: 130px
 	@media (max-width: 575.98px)
 		margin-top: 100px
 
+.section-2
+	margin-top: 60px
+
+.fz-8	
+	font-size: 8px
 .fz-10	
 	font-size: 10px
 .fz-12	
@@ -184,9 +217,21 @@ a
 
 .border-gray
 	@media (min-width: 1200px)
-		border-bottom: 4px solid #edeff1
+		border-bottom: 4px solid $color-border2
 	.sticky &
 		border: 0
+
+.img-wrap 
+	overflow: hidden
+	transition: $transition
+	cursor: pointer
+	position: relative
+	.bg-wrap
+		transition: $transition
+	@media (min-width: 1200px)
+		&:hover
+			.bg-wrap
+				transform: scale(1.1) 
 
 .bg-img
 	background-size: cover
@@ -197,20 +242,32 @@ a
 	.w-300 
 		width: 300px
 
-.form-search
+.form-box
 	position: relative
 	width: 200px
+	@media (min-width: 1200px)
+		width: 38px
+		height: 38px
+		margin-left: 16px
+		margin-right: 16px
+
+.form-search
+	width: 200px
 	height: 38px
+	@media (min-width: 1200px)
+		position: absolute
+		top: 0
+		right: 0
 	.search
-		transition: .3s
+		transition: $transition
 		position: absolute
 		border: none
-		border-radius: 6px
+		border-radius: 0
 		padding: 0
 		cursor: pointer
 		text-align: center
-		color: #6e6e6e
-		background: #FFF
+		color: $color-gray
+		background: $color-white
 		top: 1px
 		right: 1px
 		bottom: 1px
@@ -221,13 +278,13 @@ a
 		top: 0
 		right: 0
 		bottom: 0
-		border-radius: 6px
-		transition: .3s
+		border-radius: 0
+		transition: $transition
 		height: 38px
 		padding: 0 
 		width: 38px
 		box-shadow: none !important
-		border: 1px solid #edeff1
+		border: 1px solid $color-border2
 		@media (max-width: 1199.98px)
 			width: 100%
 			padding: 6px 34px 6px 12px
@@ -255,9 +312,9 @@ a
 		margin-top: 8px
 	span, &:before, &:after
 		display: block
-		transition: .3s
+		transition: $transition
 		transform-origin: right center
-		border-top: 1px solid #000
+		border-top: 1px solid $color-black
 		margin-left: auto
 	&.active
 		&:before
@@ -271,13 +328,13 @@ a
 			width: 25px
 
 .form-section
-	background: #fbfbfb
+	background: $color-form
 	border-radius: 12px
 	padding: 20px 25px 28px
-	border: 3px solid #00acc8
-	transition: .3s
+	border: 3px solid $color-blue
+	transition: $transition
 	&:hover 
-		border-color: #f75b19
+		border-color: $color-orange
 	.form-control
 		height: 40px
 		padding: 6px 18px 
@@ -285,4 +342,147 @@ a
 		&:focus 
 			box-shadow: none
 
+.news-box
+	padding-bottom: 24px
+	&:not(:last-child)
+		border-bottom: 1px solid $color-border
+		margin-bottom: 40px	
 
+.news-box-2
+	padding-bottom: 24px
+	&:not(:last-child)
+		border-bottom: 1px solid $color-border
+		margin-bottom: 32px	
+	&.border-news
+		@media (max-width: 1199.98px)
+			border: 0
+
+.news-box-3
+	&:not(:last-child)
+		border-bottom: 1px solid $color-border
+		margin-bottom: 22px	
+		padding-bottom: 22px
+
+.news-box-4
+	padding-bottom: 38px
+	&:not(:last-child)
+		border-bottom: 1px solid $color-border
+		margin-bottom: 40px	
+
+.subscribe-box
+	margin-top: 85px
+	@media (max-width: 1199.98px)
+		margin-top: 100px
+	.subscribe-top
+		background: $color-yellow
+		padding: 4px 16px
+		color: $color-white
+		text-transform: uppercase
+		text-align: center 
+		@media (max-width: 575.98px)
+			font-size: 13px
+
+.section-inbox
+	padding: 120px 16px 150px
+	color: $color-white
+	background: linear-gradient(180deg, #1fa2be 0%, #1d8ba2 100%)
+	@media (max-width: 1199.98px)
+		padding: 60px 16px 70px
+	@media (max-width: 575.98px)
+		padding: 40px 16px 50px
+	.subscribe-title
+		line-height: 1
+		font-size: 60px
+		text-transform: uppercase
+		font-weight: bold 
+		@media (max-width: 1199.98px)
+			font-size: 46px
+		@media (max-width: 575.98px)
+			font-size: 30px
+
+.form-modal
+	position: relative
+	z-index: 2
+	.form-search-modal
+		border-radius: 0
+		height: 44px
+		font-size: 16px
+		color: #d5d5d5
+		background: $color-white
+		padding: 8px 16px
+		border: 2px solid $color-gray2
+		margin-right: 13px
+		&::-webkit-input-placeholder
+			color: #B8B8B8
+		&::-moz-placeholder
+			color: #B8B8B8
+		&:-ms-input-placeholder
+			color: #B8B8B8
+		&:focus
+			box-shadow: none
+		@media (max-width: 575.98px)
+			height: 38px
+
+.btn-subscribe
+	transition: $transition
+	background: $color-yellow
+	border: 2px solid $color-white
+	height: 44px
+	display: block
+	width: 100%
+	text-transform: uppercase
+	color: $color-white
+	padding: 4px
+	font-size: 15px
+	font-weight: bold
+	&:hover
+		opacity: .9
+	@media (max-width: 575.98px)
+		height: 38px
+
+.btn-subscribe-small
+	font-size: 10px
+
+.cart-gray
+	background: $color-form
+	border-top: 4px solid $color-yellow
+	.title-block
+		padding: 22px 16px 22px 0
+		display: flex
+		flex-direction: column
+		height: 100%
+		@media (max-width: 767.98px)
+			padding: 22px 16px
+		.title
+			font-size: 24px
+			line-height: 1.1
+			font-weight: bold
+			@media (max-width: 991.98px)
+				font-size: 15px
+
+.know
+	position: absolute
+	left: 20px
+	top: 20px
+	bottom: 10px
+	right: 10px
+	font-size: 44px
+	color: $color-white
+	font-weight: bold
+	line-height: 1.2
+	text-shadow: 2px 0px 8px rgba(0, 0, 0, 1)
+	@media (max-width: 991.98px)
+		font-size: 30px
+
+.section-inbox-small
+	padding: 24px 16px 
+	.subscribe-title
+		font-size: 18px
+	.form-search-modal
+		font-size: 10px 
+
+.footer
+	font-size: 12px
+	.footer-border
+		border-top: 1px solid $color-border
+		padding: 20px 0 30px

@@ -4,11 +4,6 @@ $(document).ready(function () {
     $(this).parent().toggleClass('open');
   });
 
-    $(".navbar-toggler").on("click", function() {
-    $(this).toggleClass("active");
-    $("body").toggleClass("menubar-in");
-  });
-
   function headerSticky() {
     if ($(window).scrollTop() > 0) {
       $('.navbar').addClass("sticky");
@@ -22,7 +17,7 @@ $(document).ready(function () {
   });
   headerSticky();
 
-  Waves.attach('.btn', ['waves-dark']);
+  Waves.attach('.btn, .btn-subscribe', ['waves-dark']);
   Waves.init();
 
 });
